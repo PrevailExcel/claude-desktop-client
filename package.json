@@ -1,0 +1,87 @@
+{
+  "name": "claude-desktop",
+  "version": "1.0.0",
+  "description": "Desktop application for Claude AI",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:snap": "electron-builder --linux snap"
+  },
+  "keywords": [
+    "claude",
+    "anthropic",
+    "ai",
+    "desktop",
+    "electron",
+    "chat",
+    "productivity",
+    "openai alternative",
+    "cross-platform",
+    "chatbot"
+  ],
+  "author": {
+    "name": "Prevail Ejimadu",
+    "email": "prevailexcellent@gmail.com"
+  },
+  "homepage": "https://github.com/prevailexcel/claude-desktop-client",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prevailexcel/claude-desktop-client"
+  },
+  "dependencies": {
+    "electron-context-menu": "^4.0.4"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.claude.desktop",
+    "productName": "Claude Desktop",
+    "linux": {
+      "target": [
+        "snap",
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "icon": "assets/icon.png"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.productivity"
+    },
+    "snap": {
+      "confinement": "strict",
+      "grade": "stable",
+      "summary": "Desktop app for Claude AI assistant",
+      "description": "An unofficial desktop application for accessing Claude AI",
+      "plugs": [
+        "default",
+        "network",
+        "network-bind",
+        "browser-support"
+      ]
+    },
+    "files": [
+      "src/**/*",
+      "package.json",
+      "assets/**/*"
+    ]
+  }
+}

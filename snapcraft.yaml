@@ -1,0 +1,42 @@
+name: claudeai-desktop
+base: core22
+version: '1.0.0'
+summary: Claude Desktop App
+description: |
+  Claude Desktop is a lightweight Electron-based desktop app providing a smooth and fast experience with Claude AI.
+
+grade: stable
+confinement: strict
+
+title: Claude Desktop
+contact: prevailexcellent@gmail.com
+license: MIT
+website: https://github.com/prevailexcel/claude-desktop-client
+source-code: https://github.com/prevailexcel/claude-desktop-client
+issues: https://github.com/prevailexcel/claude-desktop-client/issues
+donation: https://buymeacoffee.com/prevail
+
+apps:
+  claude-desktop:
+    command: usr/bin/claude-desktop
+    plugs:
+      - network
+      - desktop
+      - desktop-legacy
+      - x11
+      - wayland
+      - unity7
+      - browser-support
+      - home
+
+parts:
+  claude-desktop:
+    plugin: dump
+    source: dist/linux-unpacked
+    stage-packages:
+          - libnss3
+          - libgbm1
+          - libdrm2
+
+    organize:
+      claude-desktop: usr/bin/claude-desktop
