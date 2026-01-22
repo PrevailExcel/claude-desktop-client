@@ -48,13 +48,13 @@ npm start
 ```bash
 npm run dist
 cd dist
-sudo snap install --dangerous ./claudeai-desktop_1.0.0_amd64.snap
+sudo snap install --dangerous ./claude-desktop_1.0.0_amd64.snap
 ```
 
 ## ❌ Uninstallation
 
 ```bash
-sudo snap remove claudeai-desktop
+sudo snap remove claude-desktop
 ```
 
 ## 🚀 Usage
@@ -62,7 +62,7 @@ sudo snap remove claudeai-desktop
 Launch Claude Desktop:
 
 ```bash
-claudeai-desktop
+claude-desktop
 ```
 
 ## 🤝 Contributing
